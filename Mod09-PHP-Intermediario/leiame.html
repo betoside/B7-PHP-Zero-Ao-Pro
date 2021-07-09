@@ -28,6 +28,9 @@
     #9: Manipulação de Arrays
     #10: Introdução à Criptografia
 
+
+
+        =========================
         11-Introdução-Banco-dados
 
             #11: Introdução à Banco de dados 2:46
@@ -116,45 +119,100 @@
 
             #17: PDO: Definindo Acesso 06:07 ======================== 58 minutos, 1h + -
             
-                17-25-PDO
+                17-25-PDO.php
 
 
             #18: PDO: Conectando ao Banco de Dados 07:12 
+
+                $varQq = new PDO(db, user, pass);
+                
             #19: PDO: Selecionando Dados 10:49
+
+                $sql = "SELECT * FROM usuarios WHERE email = 'qualquer@email.com'";
+                $sql = $pdo->query($sql);
+            
+                if ($sql->rowCount() > 0) {
+                    foreach($sql->fetchAll() as $usuario){ // foreach vai pegar cada resultado e inserir no array $usuario
+                        echo "<strong>Nome</strong>: ".$usuario['nome'].", ".$usuario['email']."<br>";
+                    }
+                } else {
+                    echo "Não há resultados retornados do BD.";
+                }
+
             #20: PDO: Inserindo Dados 5:36
+                
+                20-PDO-Inserindo.php
+
+                o banco retorna o ID da linha inserida
+
+
             #21: PDO: Atualizando Dados 6:39
+
+                21-PDO-Atualizando.php
+
             #22: PDO: Deletando Dados 2:40
+            
+                22-PDO-Deletando.php
+
+
             #23: PDO: PDOStatement e binds 13:18 ==================== 43 minutos, + - 
 
+                PDOStatement, para segurança e organização
+                23-PDOStatement.php
+
+
             #24: Exemplo: Controle de Usuários 36:07 
+            
+                24-Controle-Usuarios
+            
+            
             #25: Exemplo: Sistema de Login 18:22 ==================== 52 minutos, pelo menos
 
             Total aulas: 15
-            Tempo total aulas: 
+            Tempo total aulas: Aproximado 3h
+
+
 
     #26: Upload de arquivo
     #27: Upload múltiplo de arquivo
-    #28: BÔNUS: Erro de Header Already Sent
-    #29: BÔNUS: Erro no rowCount
+
+        =======================================
+        #28: BÔNUS: Erro de Header Already Sent
+
+
+        #29: BÔNUS: Erro no rowCount
+
+
+
     #30: Projeto: Ordenação de Resultados
+
     #31: Projeto: Sistema de Comentários
+
     #32: Projeto: Registro por Convite
+
     #33: Projeto: Caixa Eletrônico Online (1/2)
     #34: Projeto: Caixa Eletrônico Online (2/2)
+
     #35: Projeto: Sistema de Tags
+
     #36: Projeto: Calculadora Básica (Exercício)
     #37: Projeto: Calculadora Básica (Resolução)
+
     #38: Projeto: Verificador de Humano (Exercício)
     #39: Projeto: Verificador de Humano (Resolução)
+
     #40: Exercício: Formulário para dar nome e dizer oi
     #41: Exercício: Calculadora de Impostos
     #42: Exercício: Conversor de Palavra em Dígito
     #43: Exercício: Achar o maior número do array
     #44: Exercício: Remover itens duplicados da lista
+
     #45: Exercício: Mostrar a tabuada
     #46: Exercício: Receber números e ordenar
     #47: Exercício: Substitui uma palavra por outra na frase
+
     #48: Exercício: Sistema de sorteio
+
     #49: Exercício: Função para inverter string
     </pre>
 </body>
