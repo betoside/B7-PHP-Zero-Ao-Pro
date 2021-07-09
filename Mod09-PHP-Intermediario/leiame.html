@@ -31,12 +31,94 @@
         11-Introdução-Banco-dados
 
             #11: Introdução à Banco de dados 2:46
+                    listas 
+                    listas de produtos 
+                    listas de usuarios
+
+                    posts
+                    produtos
+                    acessos
+
             #12: Criando a estrutura do banco de dados 8:48
+
+                    posts   
+                        id
+                        titulo
+                        data_criado
+                        corpo : corpo do post
+                        autor
+
             #13: Como ler/inserir/deletar/modificar dados 15:28
+
+                    SELECT * FROM posts
+                    SELECT * FROM posts WHERE id = 2
+                    SELECT * FROM posts WHERE autor = "Alberto"
+
+                    INSERT INTO posts SET titulo = 'Um titulo', data_criado = '2021-07-08 13:59:00'
+                    INSERT INTO posts SET titulo = 'Um titulo', data_criado = '2021-07-08 13:59:00', corpo = 'Um novo corpo', autor = 'Betoside'
+
+                    UPDATE posts SET titulo = 'Um novo titulo' [*** MUDARÁ A TABLEA INTEIRA ***]
+                    UPDATE posts SET titulo = 'Um novo titulo' WHERE id = 2
+
+                    UPDATE posts SET titulo = 'Titulo 4' WHERE id = 4;
+                    SELECT * FROM posts
+
+                    INSERT INTO posts SET titulo = 'Titulo 5', data_criado = '2021-07-08 05:00:00', corpo = 'Corpo para 5', autor = 'Nome 5'
+                    ;
+                    INSERT INTO posts SET titulo = 'Titulo 6', data_criado = '2021-07-08 06:00:00', corpo = 'Corpo para 6', autor = 'Nome 6'
+                    ;
+                    INSERT INTO posts SET titulo = 'Titulo 7', data_criado = '2021-07-08 07:00:00', corpo = 'Corpo para 7', autor = 'Nome 7'
+                    ;
+                    SELECT * FROM posts;
+
+
             #14: SQL Injection 10:11
+
+                $autor = $_POST['autor'];  // or 1=1
+
+                $autor = $_POST['autor'];  // '; DROP TABLE posts
+
+                $sql = "SELECT * FROM posts WHERE autor = '' or 1=1";
+
+                ///
+
+                $autor = addslashes( $_POST['autor'] );
+                $sql = "SELECT * FROM posts WHERE autor = 'Nome \'Sobrenome'";
+
+
             #15: Sessão / Cookie 13:46
+            
+                15-Sessao-Cookie.php
+
+                php browser sessão, a aba manterá a sessão enquanto a aba existir
+                bancos, a sessao tem tempo limite
+
+                session, 
+                
+                    as informacoes ficam no servidor
+                    as informacoes podem ser passadas entre as paginas do sistema
+
+                cookie, 
+                
+                    as informacoes ficam no browser do client
+
+
+
             #16: Erros e Exceções 06:10
+
+                display_errors = Off
+
+                /Applications/MAMP/bin/php/php7.4.9/conf/php.ini
+
+                Usar console: 
+                error_log : /Applications/MAMP/logs/php_error.log	
+
+
             #17: PDO: Definindo Acesso 06:07 ======================== 58 minutos, 1h + -
+            
+                17-25-PDO
+
+
             #18: PDO: Conectando ao Banco de Dados 07:12 
             #19: PDO: Selecionando Dados 10:49
             #20: PDO: Inserindo Dados 5:36
