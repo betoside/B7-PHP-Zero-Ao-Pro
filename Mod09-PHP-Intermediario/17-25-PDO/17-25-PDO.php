@@ -31,7 +31,7 @@ try {
 definir parametros basicos
     mysql:              = tipo do banco de dados
     dbname;             = nome do banco de dados
-    server              = servidor
+    host/server;        = servidor
     user
     pass
 
