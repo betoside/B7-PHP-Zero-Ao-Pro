@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$id = 0;
+// $id = 0;
 
 if (isset($_GET['id']) && !empty($_GET['id']) ) {
 
