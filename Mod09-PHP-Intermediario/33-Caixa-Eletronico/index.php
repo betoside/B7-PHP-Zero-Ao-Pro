@@ -83,7 +83,7 @@ if (isset($_SESSION['banco']) && !empty($_SESSION['banco'])) {
                         <span class="red">- <?=$item['valor'];?></span>
                     <?php endif; ?>
                 </td>
-                <td><a class="red" href="excluir.php?id=<?=$item['id'];?>">[-]</a></td>
+                <td><a class="red" href="excluir.php?id=<?=$item['id'];?>&valor=<?=$item['valor'];?>&tipo=<?=$item['tipo'];?>">[-]</a></td>
             </tr>
             <?php
             endforeach;
