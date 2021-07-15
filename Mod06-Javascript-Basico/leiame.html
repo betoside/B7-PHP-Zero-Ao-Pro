@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 6, JS Básico, escopo</title>
+</head>
+<body>
+    ../ <a href="../">PHP</a>
+    <br>
+    <br>
+
+    <pre>
+        Módulo 6: Javascript Básico
+            
+            Mod06-Javascript-Basico
+
+        17 aulas
+        <hr>
+        #1: Primeiros Passos 3:00
+        
+        <hr>
+        #2: Criando variáveis 6:00
+
+            var var_nome = "Tubo";
+            let var_nome2 = "surf";
+            const var_nome3 = "prancha";
+            let var_x = 10;
+            let var_y = 10;
+        
+        
+        <hr>
+        #3: Comentários 6:00
+        
+        <hr>
+        #4: Prompt de entrada 5:00
+
+            Perguntar ou pedir algum dado ao user da página.
+
+            <a href="javascript: return false;" onclick="fn_prompt();">Click, digite seu nome.</a>
+            <Script>
+                function fn_prompt() {
+                    var fn_prompt_nome = prompt("Qual é teu nome?");
+                    alert("Oi "+ fn_prompt_nome +", legal te conhecer ;)");
+                }
+            </Script>
+
+        
+        <hr>
+        #5: Escrever na página 4:00
+
+            <script>
+                document.write("<div style='display:inline-block; border: 1px solid #f00;'>Esse teste </div><br>");
+                document.write("<div style='display:inline-block; border: 1px solid #f00;'>Esse teste 2 </div><br>");
+                document.write("<div style='display:inline-block; border: 1px solid #f00;'><img src='http://www.google.com/google.jpg' /></div>");
+            </script>
+
+
+        
+        <hr>
+        #6: JSFiddle 3:00
+
+            <a href="https://jsfiddle.net/" target="_blank">https://jsfiddle.net/</a>
+
+            HTML
+            <br>
+            <div class="teste">div de teste</div>
+            <br>
+            <a href="javascript: return false;" onclick="mudar();">Colorir com vermelho</a>
+            <br>
+            <a href="javascript: return false;" onclick="voltar();">voltar a cor cinza</a>
+
+            STYLE
+            <br>
+            .teste { 
+                background-color: #ccc;
+                padding: 10px;
+            }
+            .teste2 { 
+                background-color: #f00;
+                padding: 10px;
+                color: #fff ;
+                font-weight: bold
+            }
+                <style>
+                .teste { 
+                    background-color: #ccc;
+                    padding: 10px;
+                    display: inline-block;
+                }
+                .teste2 { 
+                    background-color: #f00;
+                    padding: 10px;
+                    color: #fff ;
+                    font-weight: bold
+                }
+                </style>
+            
+                JS 
+                <br>
+                function mudar() {
+                    div = document.querySelector('.teste');
+                    div.classList.add('teste2');
+                }
+                function voltar() {
+                    div = document.querySelector('.teste');
+                    div.classList.remove('teste2');
+                }
+                <script>
+                    function mudar() {
+                        div = document.querySelector('.teste');
+                        div.classList.add('teste2');
+                    }
+                    function voltar() {
+                        div = document.querySelector('.teste');
+                        div.classList.remove('teste2');
+                    }
+                </script>
+                    
+        
+        <hr>
+        #7: Refresh ou Redirect 7:00
+
+                <div class="reloadPage">Recarregar essa tela</div>
+                <br>
+                <input type="text" class="destino"> <button onclick="fnDestino();">Digite algo ou site que quer ir</button>
+                <style>
+                    .reloadPage { padding: 10px;background: rgb(190, 56, 56);border-radius: 3px;cursor: pointer;display: inline-block;}
+                    .destino {min-width: 300px;}
+                </style>
+                <script>
+                    let btReloadPage = document.querySelector('.reloadPage');
+                    btReloadPage.addEventListener('click', function() {
+                        window.location.href = window.location.href;
+                    })
+                    function fnDestino() {
+                        let destino = document.querySelector('.destino');
+                        // alert(destino.value);
+                        // return;
+
+                        // window.location.href = 'https://www.google.com.br/search?q='+destino.value;
+
+                        window.open('https://www.google.com.br/search?q='+destino.value, '_blank');
+                    }
+                </script>
+
+        34:00
+
+        
+        <hr>
+        #8: Modificando o HTML
+
+                <div class="modificarArea">
+                    Bom dia, boa tarde, boa noite.
+                </div>
+                <input type="text" class="modificarSaudacao">
+                <button onclick="modificarAcao()">Escolher uma parte do dia</button>
+                <style>
+                    .modificarSaudacao {min-width: 300px;}
+                </style>
+                <script>
+                    function modificarAcao(){
+                        let modifiConteudoNovo = document.querySelector('.modificarSaudacao').value;
+                        document.querySelector('.modificarArea').innerHTML = modifiConteudoNovo;
+                    }
+
+                </script>
+
+
+        
+<hr>
+        #9: Criando Funções
+        
+        <hr>
+        #10: Modificando uma lista
+
+                
+                <p><strong>Ingredientes</strong></p>
+                <input type="text" id="modIngrediente">
+                <button class="modIncluirIngrediente" onclick="modAddIngrediente()">Incluir ingrediente</button>
+                <ul id="modListaIngredientes">
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+                <script>
+                    function modAddIngrediente() {
+                        let ing = document.querySelector('#modIngrediente').value;
+                        // console.log(ing);
+                        // return;
+                        let lista = document.querySelector('#modListaIngredientes').innerHTML;
+                        // console.log(lista);
+                        // return;
+                        lista = lista + "<li>" + ing + "</li>";
+
+                        document.querySelector('#modListaIngredientes').innerHTML = lista;
+                        
+                    }
+
+                </script>
+
+        <hr>
+        #11: Operações
+
+            valor 1 <br>
+            <input type="text" class="opValor1"> <br>
+
+            valor 2 <br>
+            <input type="text" class="opValor2"> <br>
+
+            <button onclick="opCalcular('somar')">+ Somar</button> <br>
+            <button onclick="opCalcular('subtrair')">- Subtrair</button> <br>
+            <button onclick="opCalcular('multiplicar')">* Multiplicar</button> <br>
+            <button onclick="opCalcular('dividir')">/ Dividir</button> <br>
+            
+            Resultado: <div class="opResultado"></div>
+
+            <style>
+                .opResultado {display: inline-block;}
+            </style>
+            <script>
+                function opCalcular(operacao){
+                    let valor1 = parseFloat(document.querySelector('.opValor1').value);
+                    let valor2 = parseFloat(document.querySelector('.opValor2').value);
+                    let resultado = Number();
+                    switch (operacao) {
+                        case 'somar':
+                            resultado = valor1 + valor2;
+                            break;
+                        // .
+                        case 'subtrair':
+                            resultado = valor1 - valor2;
+                            break;
+                        // .
+                        case 'multiplicar':
+                            resultado = valor1 * valor2;
+                            break;
+                        // .
+                        case 'dividir':
+                            resultado = valor1 / valor2;
+                            break;
+                        // .
+                    }
+
+                    document.querySelector('.opResultado').innerHTML = resultado;
+                }
+            </script>
+
+
+
+        <hr>
+        #12: Arrays
+
+        <hr>
+        #13: Manipulação de Arrays
+
+            let lista = ['arroz','feijão','batata','frango','ovo'];
+            console.log("let lista = ['arroz','feijão','batata','frango','ovo']");
+            console.log('arroz: ' + lista.indexOf('arroz'));
+            console.log('feijao: ' + lista.indexOf('feijao'));
+            console.log('feijão: ' + lista.indexOf('feijão'));
+            console.log('batata: ' + lista.indexOf('batata'));
+            console.log('frango: ' + lista.indexOf('frango'));
+            console.log('ovo: ' + lista.indexOf('ovo'));
+            console.log(lista);
+            console.log(lista.pop());
+            console.log(lista);
+            listajoin = lista.join('|');
+            console.log(listajoin);
+            listashift = lista.shift();
+            console.log('listashift', listashift);
+            console.log('lista',lista);
+            lista.push('Chocolate');
+            console.log('lista + chocolate', lista);
+            if (lista.indexOf('feijão') > -1) {
+                console.log('*feijão* tem na lista');
+            } else {
+                console.log('*feijão* NÃO tem na lista');
+            }
+            console.log('indexOf, pop, push, join');
+
+            <script>
+                let lista = ['arroz','feijão','batata','frango','ovo'];
+                console.log("let lista = ['arroz','feijão','batata','frango','ovo']");
+                console.log('arroz: ' + lista.indexOf('arroz'));
+                console.log('feijao: ' + lista.indexOf('feijao'));
+                console.log('feijão: ' + lista.indexOf('feijão'));
+                console.log('batata: ' + lista.indexOf('batata'));
+                console.log('frango: ' + lista.indexOf('frango'));
+                console.log('ovo: ' + lista.indexOf('ovo'));
+                console.log(lista);
+                console.log(lista.pop());
+                console.log(lista);
+                listajoin = lista.join('|');
+                console.log(listajoin);
+                listashift = lista.shift();
+                console.log('listashift', listashift);
+                console.log('lista',lista);
+                lista.push('Chocolate');
+                console.log('lista + chocolate', lista);
+                if (lista.indexOf('feijão') > -1) {
+                    console.log('*feijão* tem na lista');
+                } else {
+                    console.log('*feijão* NÃO tem na lista');
+                }
+                console.log('indexOf, pop, push, join');
+            </script>
+
+        <hr>
+        #14: Verificadores
+
+            if () {
+
+            }
+
+            <script>
+                let verifNome = String();
+                verifNome = 'betao';
+                if (verifNome == 'betao') {
+                    console.log('Betão', 'Go Go Go ahead!');
+                } else {
+                    console.log('Attention, back to Betão');
+                }
+
+                let verifNumero = 3;
+
+                if (verifNumero >= 10) {
+                    console.log('verifNumero >= 10: ', verifNumero);
+                } else {
+                    console.log('verifNumero <= 10: ', verifNumero);
+                    
+                }
+            </script>
+        
+        <hr>
+        #15: Loops
+
+            while(x < 10){
+
+                x++;
+            }
+
+            for (x=0; x<10; x++) {
+
+                processamento
+
+            }
+            <script>
+
+                loopX = 0;
+                if(loopX < 10){
+                    document.write('<b>'+loopX+',</b> ');
+                    loopX++;
+                }
+                document.write(' || ');
+                while(loopX < 10){
+                    document.write(loopX+', ');
+                    loopX++;
+                }
+
+                for (loopY = 0; loopY < 10; loopY++) {
+                    document.write('<br>loopY: '+loopY);
+                }
+    
+            </script>
+        
+        
+        <hr>
+        #16: Switch
+        
+        
+        
+        <hr>
+        #17: Exemplo: Advinhe o número
+
+            
+    </pre>
+
+</body>
+</html>
