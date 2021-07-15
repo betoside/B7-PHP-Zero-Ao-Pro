@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 12: PHP Avançado</title>
+</head>
+<body>
+    <h1>Módulo 12: PHP Avançado</h1>
+
+    <pre>
+    58 aulas
+    #1: Mod_rewrite
+        01-Mod_rewrite
+
+        httpd.conf
+            LoadModule rewrite_module modules/mod_rewrite.so
+
+        .htaccess
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+
+            http://www.site.com.br/artigo_de_fulano (USER)
+            http://www.site.com.br/index.php?q=artigo_de_fulano (SERVER)
+
+            RewriteRule ˆ(.*)$ /index.php?q=$1 [L]
+
+            # RewriteRule ^(.*)$ index.php?q=$1 [QSA,L]
+            # RewriteRule ^(.*)$ index.php?post=$1 [QSA,L]
+
+    #2: Biblioteca GD
+    
+    #3: Redimensionando/cortando imagens
+    #4: Manipulando Imagens com GD
+    #5: Envio de e-mail
+    #6: Biblioteca cURL
+    #7: Introdução à orientação a objetos
+    #8: Definindo uma Classe
+    #9: Definindo Métodos
+    #10: Instanciando uma Classe
+    #11: Definindo Propriedades
+    #12: Getter & Setter
+    #13: Construtor
+    #14: Métodos Auxiliares
+    #15: Herança de Classes
+    #16: Abstração de Classes
+    #17: Interface
+    #18: Polimorfismo
+    #19: Namespace
+    #20: CRUD: Introdução & Construtor
+    #21: CRUD: Create e Read
+    #22: CRUD: Update, Delete e Teste Simples
+    #23: CRUD: Usando na prática (1/5) - Ler
+    #24: CRUD: Usando na prática (2/5) - Adicionar
+    #25: CRUD: Usando na prática (3/5) - Excluir
+    #26: CRUD: Usando na prática (4/5) - Editar
+    #27: CRUD: Usando na prática (5/5) - Editar Tudo
+    #28: Criando uma Calculadora OO
+    #29: PDO Statement
+    #30: Classe de Usuário (BD)
+    #31: Classe de Usuário (PROP)
+    #32: Classe de Usuário (Métodos)
+    #33: Classe de Usuário (Final)
+    #34: Paginação
+    #35: Documentando seu código
+    #36: Projeto: Cadastro com aprovação
+    #37: Projeto: Esqueci a senha
+    #38: Projeto: Crontab
+    #39: Projeto: Log de eventos
+    #40: Projeto: Multi-linguagem
+    #41: Projeto: Pesquisa em várias colunas
+    #42: Projeto: Filtro em tabela
+    #43: Projeto: Permissão de Usuários
+    #44: Projeto: Captcha
+    #45: Projeto: Lixeira de Itens
+    #46: Projeto: Sistema de Reservas (1/4)
+    #47: Projeto: Sistema de Reservas (2/4)
+    #48: Projeto: Sistema de Reservas (3/4)
+    #49: Projeto: Sistema de Reservas (4/4)
+    #50: Projeto: Sistema de Login Único
+    #51: Projeto: Sistema de Rating
+    #52: Projeto: Usuários Online
+    #53: Projeto: Sistema de Marketing Multinível (1/4)
+    #54: Projeto: Sistema de Marketing Multinível (2/4)
+    #55: Projeto: Sistema de Marketing Multinível (3/4)
+    #56: Projeto: Sistema de Marketing Multinível (4/4)
+    #57: Exercício: Objeto com nome e idade
+    #58: Exercício: Calcular a diferença entre dat
+    </pre>
+
+</body>
+</html>
