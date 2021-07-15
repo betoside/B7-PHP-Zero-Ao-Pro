@@ -336,12 +336,13 @@
         <hr>
         #15: Loops
 
+            
             while(x < 10){
 
                 x++;
             }
 
-            for (x=0; x<10; x++) {
+            for (x=0; x < 10; x++) {
 
                 processamento
 
@@ -369,10 +370,63 @@
         <hr>
         #16: Switch
         
-        
+
         
         <hr>
         #17: Exemplo: Advinhe o número
+
+        <div class="advinheDiv advinheDiv1">0</div>
+        <input class="advinheDiv advinheDiv2" placeholder="oi">
+        <br style="clear: both;">
+        <button class="advinheButton" onclick="verificarNumeroDigitado()">Verificar</button>
+        <br>
+        <button class="advinheNew" onclick="advinheNew()">Sortear novo número</button>
+        <br>
+        resposta: <div class="advinheResposta"></div>
+        <script>
+            function advinheNew() {
+                document.querySelector('.advinheDiv1').innerHTML = Math.floor(Math.random() * 11);
+                document.querySelector('.advinheDiv2').value = "";
+            }
+            function verificarNumeroDigitado() {
+                let advinheDiv1 = parseInt(document.querySelector('.advinheDiv1').innerHTML);
+                let advinheDiv2 = parseInt(document.querySelector('.advinheDiv2').value);
+                let advinheVerifica = Boolean;
+                let advinheResposta = document.querySelector('.advinheResposta');
+
+                if(advinheDiv1 == advinheDiv2) {
+                    advinheVerifica = true;
+                    advinheResposta.innerHTML = "<b>Correta!</b> :)  Você digitou: " + advinheDiv2;
+                } else {
+                    advinheVerifica = false;
+                    advinheResposta.innerHTML = "<b>Errada!</b> :/";
+                }
+            }
+        </script>
+        <style>
+            .advinheDiv {
+                float: left;
+                width: 220px;
+                height: 220px;
+                border: 1px solid #000;
+                margin-right: 10px;
+                font-size: 100px;
+                line-height: 200px;
+                text-align: center;
+            }
+            .advinheButton {
+                width: 400px;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+            .advinheResposta {
+                display: inline-block;
+            }
+        </style>
+
+
+
+
 
             
     </pre>
