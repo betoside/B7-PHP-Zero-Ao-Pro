@@ -83,7 +83,46 @@
             SELECT COUNT(*) AS contagem, faixa_salarial FROM usuarios GROUP BY faixa_salarial
 
         #15: Relacionamento de Tabelas
+            1:N
+                masculino : varios produtos 
+                feminino : varios produtos 
+                
+            1:1
+                um item esta relacionado diretamente com outro item 
+                login c token: 
+                qdo user faz login gera um codigo de acesso armazenado em outra tabela de acessos
+                a relacao entre o codigo e o usuario possuem uma relacao direta 
+                um registro de uma tabela esta relacionado a um registro de outra tabela
+
+            N:N
+                um produto 
+                uma tabela de cores
+                 um produto pode ter varias cores
+                 uma cor pode ter varios produtos associados a ela 
+            .
+
         #16: Consulta Avançada com JOIN
+            Existe 3 tipos, dois relevantes, um não 
+            O inner e left sao os que trazem respostas que vc mais vai usar
+            left retorna todas as respostas da esquerda independente de ter ou nao relacionamento estabelecido com alguma linha
+            
+            INNER JOIN 
+            SELECT usuarios.nome, faixas.titulo FROM usuarios INNER JOIN faixas ON faixas.id = usuarios.faixa_salarial
+
+            LEFT JOIN 
+            retorna todos os resultados da tabela da esquerda, independente de haver uma relação ou não
+            SELECT usuarios.nome, faixas.titulo FROM usuarios LEFT JOIN faixas ON faixas.id = usuarios.faixa_salarial
+            Exibiu um funcionario que possui uma faixa que nao existe
+
+            RIGHT JOIN 
+            SELECT usuarios.nome, faixas.titulo FROM usuarios RIGHT JOIN faixas ON faixas.id = usuarios.faixa_salarial
+            Exibiu uma faixa que ninguém faz parte
+            
+            SELECT usuarios.id, usuarios.nome, usuarios.email, usuarios.data_nascimento, faixas.titulo as faixa FROM usuarios LEFT JOIN faixas ON faixas.id = usuarios.faixa_salarial
+
+            SELECT usuarios.id, usuarios.nome, usuarios.email, usuarios.data_nascimento, faixas.titulo as faixa FROM usuarios RIGHT JOIN faixas ON faixas.id = usuarios.faixa_salarial
+
+
         #17: Subconsultas com SubQuery
         #18: Criação de Funções
         #19: Criação de Views
