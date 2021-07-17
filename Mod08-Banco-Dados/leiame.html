@@ -124,8 +124,47 @@
 
 
         #17: Subconsultas com SubQuery
+            SELECT usuarios.nome, (select faixas.titulo from faixas where faixas.id = usuarios.faixa_salarial) as faixa FROM usuarios
+            SELECT usuarios.nome FROM usuarios WHERE (select faixas.titulo from faixas where faixas.id = usuarios.faixa_salarial) = '0 - 1000'
+            SELECT usuarios.nome FROM usuarios LEFT JOIN faixas ON faixas.id = usuarios.faixa_salarial WHERE faixas.titulo = '0 - 1000'
+
+
         #18: Criação de Funções
+
+            CREATE FUNCTION CONTAR(nome VARCHAR(100))
+                RETURNS INT(10)
+                BEGIN
+        
+                    DECLARE qt int(10);
+                    SET qt = LENGTH(nome);
+                    RETURN qt;
+                
+                
+                END$$
+
+            SELECT nome, email, CONTAR(nome) AS contagem FROM usuarios
+            .
+
+            CREATE FUNCTION SOMAR(x INT(10), y INT(10))
+            RETURNS INT(10)
+            BEGIN
+                DECLARE r INT(10);
+                SET r = x + y;
+                RETURN r;
+            END$$
+            .
+
+            SELECT DISTANCIA(120, 654, 9) as distancia
+            .
+
+
         #19: Criação de Views
+            Uma tabela falsa, ou uma tabela virtual
+            
+            CREATE VIEW usuariosfaixaum AS 
+                SELECT * FROM usuarios WHERE faixa_salarial=1;
+
+
         #20: Criando Banco de dados no cPanel
         #21: HeidiSQL
         #22: Projeto: Conta Bancária
