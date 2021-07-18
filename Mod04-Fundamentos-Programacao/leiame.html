@@ -33,9 +33,76 @@
     #5: Funções
         ---
     #6: Construindo Algoritmos #1
+
+        Perspectiva do passageiro
+
+        ALGORITMO: PEGAR ONIBUS
+        ir ate a parada
+        ENQUANTO onibus nao chega
+            esperar onibus
+        subir no onibus
+        pegar passagem
+        SE nao ha passagem
+            pegar dinheiro
+        pagar ao cobrador
+        troco = dinheiro - valor da passagem
+        ENQUANTO banco nao esta vazio
+            IR PARA O PROXIMO
+        sentar
+
     #7: Construindo Algoritmos #2
+
+        Perspectiva do cobrador
+
+        ALGORITMO: CALCULO DO VALOR DA PASSAGEM
+            idade = IDADE DA PESSOA
+            preco = 10
+
+            SE idade < 65
+                DIZER: o preco é PRECO
+            CASO CONTRARIO
+                DIZER: o preco é GRATIS
+
+
     #8: Construindo Algoritmos #3
+
+        ALGORITMO: CALCULO DE GRATIFICACAO
+
+        titulo = RECEBE O TITULO DA PESSOA
+        salario = 1000
+
+        SE titulo = DOUTOR
+            salario = salario * 3
+        SE titulo = MESTRE
+            salario = salario * 2
+        
+        MOSTRAR: Seu salario é SALARIO reais
+
+
     #9: Construindo Algoritmos #4
+
+        ALGORITMO: PINTAR TABELA, ZEBRAR
+
+        x = 0
+        linha atual = 1
+        linhas = 10
+
+        ENQUANTO linha atual <= linhas 
+            x = 1 - x
+            SE x = 0
+                pintar de preto
+            SE x = 1 
+                pintar de cinza
+            linha atual = linha atual + 1
+
+            
+        x = 1 - x
+        ---------
+        x = 1 - 0 // 1
+        x = 1 - 1 // 0
+        x = 1 - 0 // 1
+
+
     #10: Teoria vs Prática
     #11: Como um servidor funciona #2
     #12: O que é Apache
