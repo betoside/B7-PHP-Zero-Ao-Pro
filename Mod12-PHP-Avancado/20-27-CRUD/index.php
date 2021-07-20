@@ -26,7 +26,7 @@ $contato = new Contato();
 // echo $excluir;
 ?>
 <h1>contatos</h1>
-<a href="adicionar.php">[ adicionar ]</a> / <a href="">reload</a>
+< <a href="../">mod 12 php avancado</a> / <a href="adicionar.php">[ adicionar ]</a> / <a href="">reload</a>
 <br><br>
 <style>
     * {font-family: sans-serif;}
