@@ -55,6 +55,21 @@ class Contato {
         }
     }
 
+    public function getInfo($id) // pegar informacoes de um contato especifico
+    {
+        $sql = "SELECT * FROM contatos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+            $info = $sql->fetch();
+            return $info;
+        } else {
+            return array();
+        }
+    }
+
     public function getAll()
     {
         $sql = "SELECT * FROM contatos";
@@ -68,7 +83,7 @@ class Contato {
     }
 
     // 3º - U (update)
-    public function editar($nome, $email)
+    public function editarPorEmail($nome, $email)
     {
         /*
         usar alguma informacao que seja unica para identificar o USER
@@ -87,23 +102,39 @@ class Contato {
         }
     }
 
-    // 4º - D (delete)
-    public function excluir($email)
+    public function editar($nome, $email, $id)
     {
-        /*
-        poderia excluir direto sem verificar porem vamos checar o email para responder ao user sobre a acao
-        */
-        if ($this->existeEmail($email)) { // fazer a verificacao para poder dar uma resposta ao user
-                
-            $sql = "DELETE FROM contatos WHERE email = :email";
+        
+        if ($this->existeEmail($email) == false) {
+
+            $sql = "UPDATE contatos SET nome = :nome, email = :email WHERE id = :id";
             $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(':nome', $nome);
             $sql->bindValue(':email', $email);
+            $sql->bindValue(':id', $id);
             $sql->execute();
-            
+
             return true;
         } else {
             return false;
         }
+    }
+
+    // 4º - D (delete)
+    public function excluirPeloEmail($email)
+    {
+        $sql = "DELETE FROM contatos WHERE email = :email";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
+    }
+
+    public function excluirPeloId($id)
+    {
+        $sql = "DELETE FROM contatos WHERE id = :id";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $sql->execute();
     }
 
     // funcoes auxiliares
