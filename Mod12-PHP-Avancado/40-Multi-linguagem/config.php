@@ -1,0 +1,8 @@
+<?php
+try {
+    global $pdo;
+    $pdo = new PDO("mysql:dbname=40-Multi-linguagem;host=localhost", "root", "root");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'ERR: '.$e->getMessage();
+}
