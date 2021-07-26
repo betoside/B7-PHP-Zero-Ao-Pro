@@ -1,0 +1,21 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+# ser acessar diretamente um arquivo
+# meusite.com/arquivos/imagem.jpg 
+# se for um arquivo de verdade o sistema vai ignorar
+# meusite.com/ceramica // vai ser interpretado como url
+
+RewriteCond %{REQUEST_FILENAME} !-d
+# vai excluir/desconsiderar pastas 
+
+# RewriteRule ^(.*)$ /index.php/$1 [L]
+# RewriteRule ^(.*)$ index.php?post=$1 [QSA,L]
+# RewriteRule ^(.*)$ /estrutura_mvc/index.php/$1 [QSA,L]
+# RewriteRule ^(.*)$ /B7-PHP-Zero-Ao-Pro/Mod16-PHP-Super-Avancado/05-Estrutura-MVC-Index-Rewrite/index.php?url=$1 [QSA,L]
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+# RewriteRule ^(.*)$ /05-Estrutura-MVC-Index-Rewrite/index.php/$1 [QSA,L]
+# RewriteRule ^(.*)$ index.php/index.php?url=$1 [QSA,L]
+
+# http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod16-PHP-Super-Avancado/05-Estrutura-MVC-Index-Rewrite/home
+  

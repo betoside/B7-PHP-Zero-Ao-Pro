@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 16: PHP Super Avançado</title>
+</head>
+<body>
+    < <a href="../">php</a> / <a href="../Mod16-PHP-Super-Avancado">Módulo 16 php super avançado</a>
+    <br><br>
+    
+    <pre>
+                
+        Módulo 16: PHP Super Avançado
+        Mod16-PHP-Super-Avancado
+
+        50 aulas
+
+        #1: CRUD: Operações via modal
+
+        --
+        #2: Autoload
+
+            02-Autoload
+
+            spl_autoload_register(function ($class){
+        
+                require 'classes/'.$class.'.php';
+            
+            });
+            
+            // require 'Cavalo.php';
+            $cavalo = new Cavalo();
+            $cavalo->relinchar();
+    
+            
+        #3: Estrutura MVC: Como é SEM o mvc?
+            03-SEM-mvc
+
+        #4: Estrutura MVC: Como é COM o mvc?
+
+            M model (as classes, responsavel p pegar infos especificas)
+                cada parte do sistema é um model 
+                - anuncios 
+                - categorias 
+                - usuarios 
+                    diga qtos anuncios tem cadastrados
+                    informe os 2 ultimos
+
+
+            V view
+                - html
+
+            C cotroller (calcular, pega o total de anuncio)
+                recebe a requisicao
+                reuni as informacoes
+                usuario querendo acessar pagina inicial 
+                 - anuncios: quantos tem
+                 - categorias: quais sao/exibir
+                 - usuarios
+
+
+        #5: Estrutura MVC: Index + Rewrite
+        05-Estrutura-MVC-Index-Rewrite
+        #6: Estrutura MVC: Autoload + Core (1/2)
+        #7: Estrutura MVC: Autoload + Core (2/2)
+        #8: Estrutura MVC: Controllers
+        #9: Estrutura MVC: Models
+        #10: Estrutura MVC: Views
+
+        #11: Estrutura MVC: Classificados em MVC (1/2)
+        #12: Estrutura MVC: Classificados em MVC (2/2)
+        #13: Bônus: Resolvendo ERRO 500
+
+
+        #14: Padrão Singleton
+        #15: Padrão Adapter
+        #16: Introdução à cache
+        #17: Cache Básico
+        #18: Cache Intermediário
+        #19: Cache Avançado
+        #20: Introdução à Controle de Versão
+        #21: Versionamento GIT
+        #22: Templates
+        #23: Manipulação de JSON
+        #24: Manipulação de XML
+        #25: Platform as a service (Multitenancy)
+
+        --
+        #26: Exemplo: Estrutura Comum p/ MVC
+
+        #27: Projeto: Relatórios em PDF
+        #28: Projeto: Criação de Gráficos
+        #29: Projeto: Upload de foto com AJAX
+        #30: Projeto: Login em AJAX
+        #31: Projeto: Autocomplete de pesquisa
+        #32: Projeto: Erro 404 no MVC
+        #33: Projeto: Routers no MVC
+        #34: Projeto: Galeria de Fotos
+        #35: Projeto: Ajax no MVC
+        #36: Projeto: Notificações Internas (1/2)
+        #37: Projeto: Notificações Internas (2/2)
+        #38: Projeto: Popular select a partir de outro
+        #39: Projeto: Paginação no MVC
+        #40: Projeto: Slug no MVC
+        #41: Projeto: Ações em Modal (1/2)
+        #42: Projeto: Ações em Modal (2/2)
+
+        --
+        #43: Técnica de Debug (1/2)
+        #44: Técnica de Debug (2/2) em MVC
+        #45: CRUD em MVC (1/5) - Ler
+        #46: CRUD em MVC (2/5) - Adicionar
+        #47: CRUD em MVC (3/5) - Exercício (Editar + Deletar)
+        #48: CRUD em MVC (4/5) - Deletar
+        #49: CRUD em MVC (5/5) - Editar
+        
+        #50: Dica: Fazendo Upload na MVC antiga
+
+    </pre>
+</body>
+</html>
