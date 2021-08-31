@@ -55,6 +55,15 @@ class Usuarios {
 
     }
 
+    public function totalUsuarios()
+    {
+        global $pdo;
+
+        $sql = $pdo->query("SELECT COUNT(*) as c FROM usuarios");
+        $row = $sql->fetch();
+        return $row['c'];
+    }
+
 
 
 

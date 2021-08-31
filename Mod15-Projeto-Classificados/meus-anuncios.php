@@ -39,13 +39,20 @@ if (empty($_SESSION['cLogin'])) {
                     $anuncio['url'] = "default.png";
                 }
                 ?>
-                <td><img src="assets/images/anuncios/<?=$anuncio['url'];?>" alt="" width="50"></td>
-                <td><?=$anuncio['titulo'];?></td>
-                <td>R$ <?=number_format($anuncio['valor'], 2);?></td>
-                <td>
-                    <a href="editar-anuncio.php?id=<?=$anuncio['id'];?>" class="btn btn-info">Editar</a>
-                    <a href="excluir-anuncio.php?id=<?=$anuncio['id'];?>" class="btn btn-danger">Excluir</a>
-                </td>
+                <tr>
+                    <td><img src="assets/images/anuncios/<?=$anuncio['url'];?>" alt="" width="50"></td>
+                    <td>
+                        <h3><?=$anuncio['titulo'];?></h3>
+                        <h4><?=$anuncio['categoria'];?></h4>
+                        <p><?=$anuncio['descricao'];?></p>
+
+                    </td>
+                    <td>R$ <?=number_format($anuncio['valor'], 2);?></td>
+                    <td>
+                        <a href="editar-anuncio.php?id=<?=$anuncio['id'];?>" class="btn btn-info">Editar</a>
+                        <a href="excluir-anuncio.php?id=<?=$anuncio['id'];?>" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
                 <?php
             endforeach;
             ?>

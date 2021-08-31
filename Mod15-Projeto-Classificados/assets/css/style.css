@@ -1,1 +1,11 @@
 .p20{ padding: 20px; }
+
+.container .fotos { display: flex; flex-wrap: wrap; }
+.container .fotos .card { max-width: 100px !important; margin-right: 20px; display: flex;flex-direction: column; justify-content: space-between; }
+.container .fotos .card img { max-width: 100%; }
+
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {    
+    border: 1px solid red !important;
+    background-color: red !important;
+}

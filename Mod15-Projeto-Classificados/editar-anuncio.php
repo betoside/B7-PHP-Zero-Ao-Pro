@@ -15,8 +15,13 @@ if (isset($_POST['titulo']) && !empty($_POST['titulo'])) {
     $valor = addslashes($_POST['valor']);
     $descricao = addslashes($_POST['descricao']);
     $estado = addslashes($_POST['estado']);
+    if (isset($_FILES['fotos'])) {
+        $fotos = $_FILES['fotos'];
+    } else {
+        $fotos = array();
+    }
 
-    $a->editAnuncio($categoria, $titulo, $valor, $descricao, $estado, $_GET['id']);
+    $a->editAnuncio($categoria, $titulo, $valor, $descricao, $estado, $fotos, $_GET['id']);
 
     ?>
     <div class="alert alert-success">
@@ -81,6 +86,22 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                     <option value="1" <?php echo ($info['estado']==1) ? 'selected="selected"' : '';?>>bom</option>
                     <option value="2" <?php echo ($info['estado']==2) ? 'selected="selected"' : '';?>>otimo</option>
                 </select>
+            </div>
+            <br>
+            <div class="form-group mb-10">
+                <label for="descricao">Fotos do anúncio:</label>
+                <input type="file" name="fotos[]" multiple>
+            </div>
+            <br>
+            <div class="container fotos">               
+                <?php foreach ($info['fotos'] as $foto): ?>
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/images/anuncios/<?=$foto['url'];?>" class="card-img-top" alt="">
+                    <div class="card-body-">
+                        <a href="excluir-foto.php?id=<?=$foto['id'];?>" class="btn text-danger">x excluir x</a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </div>
             <br>
             <input type="submit" class="btn btn-secondary" value="Salvar">
