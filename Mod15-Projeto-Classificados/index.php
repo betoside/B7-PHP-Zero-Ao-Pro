@@ -79,7 +79,7 @@ $categorias = $c->getLista();
                         <br>
                         <select name="filtros[estado]" class='form-control'>
                             <option value="" <?=($filtros['estado']=='')?'selected="selected"':'';?>></option>
-                            <option value="0" <?=($filtros['estado']=='0')?'selected="selected"':'';?>>ruim</option>
+                            <option value="3" <?=($filtros['estado']=='3')?'selected="selected"':'';?>>ruim</option>
                             <option value="1" <?=($filtros['estado']=='1')?'selected="selected"':'';?>>bom</option>
                             <option value="2" <?=($filtros['estado']=='2')?'selected="selected"':'';?>>ótimo</option>
                         </select>
@@ -116,7 +116,22 @@ $categorias = $c->getLista();
                                 <br>
                                 <?=$anuncio['categoria'];?>
                                 <br>
-                                Conservação: <?=$anuncio['estado'];?>
+                                Conservação: 
+                                <?php
+                                    switch ($anuncio['estado']) {
+                                        case '3':
+                                            echo 'Ruim';
+                                            break;
+
+                                        case '1':
+                                            echo 'Bom';
+                                            break;
+
+                                        case '2':
+                                            echo 'Ótimo';
+                                            break;
+                                    }
+                                ?>
                             </td>
                             <td>R$ <?=number_format($anuncio['valor'], 2);?></td>
                         </tr>
@@ -128,7 +143,11 @@ $categorias = $c->getLista();
                     <ul class="pagination">
                         <?php for ($q=1; $q <= $total_paginas; $q++): ?>
                         <li class="page-item <?=($p == $q)?'active':'';?>">
-                            <a class="page-link" href="index.php?p=<?=$q;?>"><?=$q;?></a>
+                            <a class="page-link" href="index.php?p=<?php
+                            $w = $_GET;
+                            $w['p'] = $q;
+                            echo http_build_query($w);
+                            ?>"><?=$q;?></a>
                         </li>
                         <?php endfor; ?>
                     </ul>
