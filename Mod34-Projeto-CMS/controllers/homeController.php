@@ -16,7 +16,14 @@ class homeController extends controller {
 
         $dados = array(
             // 'tpl' => 'default'
+            'depoimentos' => array()
         );
+
+        // pegar depoimentos
+        $depo = new Depoimentos();
+        $dados['depoimentos'] = $depo->getDepoimentos(2);
+
+        // print_r($dados);exit;
 
         // $portifolio = new Portifolio();
         // $dados['portifolio'] = $portifolio->getTrabalhos(8);

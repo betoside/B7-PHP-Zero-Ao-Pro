@@ -1,26 +1,9 @@
-body {
-    background: #fff;
-    margin: 0;
-}
-.topo {
-    height: 80px;
-    background: #eee;
-}
-.menu {
-    min-height: 40px;
-    background: #ddd;    
-}
-.container {
-    min-height: 200px;
-    background: #fff;
-}
-.rodape {
-    height: 80px;
-    background: #ddd;
-}
-.menu ul {
-    margin: 0;padding: 0;list-style: none;
-}
+body { background: #fff; margin: 0; }
+.topo { height: 80px; background: #eee; }
+.menu { min-height: 40px; background: #ddd;}
+.container { min-height: 200px; background: #fff; }
+.rodape { height: 80px; background: #ddd; }
+.menu ul { margin: 0;padding: 0;list-style: none; }
 .menu li {
     height: 40px;
     line-height: 40px;
@@ -32,3 +15,12 @@ body {
 .menu li a { color: #000; text-decoration: none; }
 .menu li:hover { background: #000; color: #fff; }
 .menu li:hover a { color: #fff; }
+
+.home-banner { height: 250px; background-size: cover; background-position: center; }
+.home-welcome {height: 250px;line-height: 300px; font-size: 35px;font-weight: bold;background: rgba(0,0,0,.4); margin-top: -250px; text-align: center;}
+
+.home-cta { text-align: center; margin-top: 20px;margin-bottom: 20px;}
+.home-cta a {text-decoration: none; color: #000; }
+.home-cta a div { width: 200px; height: 40px; margin: 0 auto; line-height: 40px; padding-left: 30px;padding-right: 30px; background: orange; border-radius: 5px; color: #000;}
+
+.home-depoimentos { padding: 25px; }

@@ -21,7 +21,7 @@ spl_autoload_register(function ($class){
             // exit;
     }
 });
-// echo 'hello index.php';
+// echo 'hello index.php';exit;
 
 $core = new Core();
 $core->run();

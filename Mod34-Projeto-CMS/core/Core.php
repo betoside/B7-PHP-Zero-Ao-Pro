@@ -16,10 +16,6 @@ class Core {
 		// print_r($url);
 		// exit;
 		$params = array();
-		// array_shift($url);
-		// array_shift($url);
-		// array_shift($url);
-		// array_shift($url);
 		// echo '<pre>';
 		// print_r($url);
 		// echo '</pre>';
@@ -58,12 +54,17 @@ class Core {
 		// exit;
 
 		if(file_exists('controllers/'.$currentController.'.php')) {
+			// echo 'controler existe';
+			// exit;
 			$c = new $currentController();
 			// echo '1 <br>';
 			// print_r($c); //homeController Object ( [config:Controller:private] => )
 			// exit;
 
 		} else {
+
+			// echo 'controler nao existe';
+			// exit;
 
 			// echo '2 <br>';
 
