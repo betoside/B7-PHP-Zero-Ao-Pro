@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /B7-PHP-Zero-Ao-Pro/Mod16-PHP-Super-Avancado/45-CRUD-MVC//index.php?url=$1 [QSA,L]
