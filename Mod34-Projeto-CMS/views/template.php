@@ -7,8 +7,14 @@
     <title></title>
 </head>
 <body>
+    teste 
+    
+    <br>
+
     <?php
     $this->loadViewInTemplate($viewName, $viewData);
     ?>
+
+    teste
 </body>
 </html>

@@ -33,6 +33,6 @@ if (ENVIRONMENT == 'development') {
 
   // /Applications/MAMP/htdocs/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS/config.php
 // $base = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
-// $config['base'] = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
+$config['base'] = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
 // echo $base;
 // exit;
