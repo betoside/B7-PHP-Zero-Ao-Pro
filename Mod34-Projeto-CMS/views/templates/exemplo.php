@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?=BASE;?>assets/css/template.css">
 </head>
 <body>
-    <div class="topo"></div>
+    <div class="topo">Exemplo</div>
     <div class="menu"></div>
     <div class="container">
         <?php

@@ -27,6 +27,6 @@ class Config extends model {
         }
         // print_r($array);
         // exit;
-        // return $array;
+        return $array;
     }
 }

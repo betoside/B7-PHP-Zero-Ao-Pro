@@ -3,4 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # RewriteRule ^(.*)$ /index.php/$1 [L]
 # RewriteRule ^(.*)$ index.php?post=$1 [QSA,L]
-  RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+  RewriteRule ^(.*)$ /B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMSindex.php/$1 [QSA,L]
+
+# /Applications/MAMP/htdocs/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS/index.php

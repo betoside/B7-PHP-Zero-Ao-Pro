@@ -23,7 +23,7 @@ class homeController extends controller {
         // $dados['base'] = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod30-Projeto-Site-Institucional/site";
 
 
-        $this->loadTemplate('default', $dados);
+        $this->loadTemplate('home', $dados);
     }
     
 }

@@ -1,7 +1,7 @@
 <?php
 require_once 'environment.php';
 
-define("BASE", "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS");
+define("BASE", "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS/");
 
 global $config;
 $config = array();
@@ -32,7 +32,7 @@ if (ENVIRONMENT == 'development') {
 // echo '<br>';
 
   // /Applications/MAMP/htdocs/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS/config.php
-$base = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
+// $base = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
 // $config['base'] = "http://localhost:8888/B7-PHP-Zero-Ao-Pro/Mod34-Projeto-CMS";
 // echo $base;
 // exit;
