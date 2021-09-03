@@ -63,7 +63,7 @@ class Core {
 
 		} else {
 
-			// echo 'controler nao existe';
+			// echo 'se trata de uma pagina';
 			// exit;
 
 			// echo '2 <br>';
