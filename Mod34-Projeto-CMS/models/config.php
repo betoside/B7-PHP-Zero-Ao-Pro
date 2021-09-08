@@ -29,4 +29,9 @@ class Config extends model {
         // exit;
         return $array;
     }
+
+    public function setPropriedade($nome, $valor)
+    {
+        $this->db->query("UPDATE config SET valor = '$valor' WHERE nome = '$nome'");
+    }
 }

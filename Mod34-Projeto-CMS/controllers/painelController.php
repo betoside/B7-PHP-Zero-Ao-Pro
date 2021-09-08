@@ -153,6 +153,31 @@ class painelController extends controller {
         $this->loadTemplateInPainel('painel/pagina_add', $dados);
     }
 
+    public function config()
+    {
+        $u = new Usuarios();
+        $u->verificarLogin();
+
+        
+        if (isset($_POST['site_title']) && !empty($_POST['site_title'])) {
+            $site_title = addslashes($_POST['site_title']);
+            $home_welcome = addslashes($_POST['home_welcome']);
+            $site_template = addslashes($_POST['site_template']);
+
+            $c = new Config();
+            $c->setPropriedade('site_title', $site_title);
+            $c->setPropriedade('home_welcome', $home_welcome);
+            $c->setPropriedade('site_template', $site_template);
+
+            header('Location:  '.BASE.'painel/config');
+            exit;
+        }
+
+        $dados = array();
+
+        $this->loadTemplateInPainel('painel/config', $dados);
+    }
+
     public function login()
     {
         $dados = array(

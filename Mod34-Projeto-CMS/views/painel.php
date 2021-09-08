@@ -12,7 +12,9 @@
     <div class="menu">
         <ul>
             <a href="<?=BASE;?>painel"><li>Páginas</li></a>
-            <a href="<?=BASE;?>painel/menus"><li>MENUS</li></a>
+            <a href="<?=BASE;?>painel/menus"><li>Menus</li></a>
+            <a href="<?=BASE;?>painel/config"><li>Configurações</li></a>
+            <a href="<?=BASE;?>painel/logout"><li>Sair</li></a>
         </ul>
         <?php  ?>
     </div>
