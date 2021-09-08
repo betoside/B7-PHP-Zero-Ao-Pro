@@ -16,9 +16,11 @@ class controller {
 	}
 
 	public function loadTemplate($viewName, $viewData = array()) {
-		// print_r( $this->config ); exit;
-		// include 'views/templates/'.$viewData['tpl'].'.php';
 		include 'views/templates/'.$this->config['site_template'].'.php';
+	}
+
+	public function loadTemplateInPainel($viewName, $viewData = array()) {
+		include 'views/painel.php';
 	}
 
 	public function loadViewInTemplate($viewName, $viewData) {
