@@ -87,6 +87,64 @@ class painelController extends controller {
         $this->loadTemplateInPainel('painel/menus_add', $dados);
     }
 
+    public function pagina_del($id)
+    {
+        $u = new Usuarios();
+        $u->verificarLogin();
+
+        $p = new Paginas();
+        $p->delete($id);
+        
+        header('Location: '.BASE.'painel');
+        exit;
+    }
+
+    public function pagina_edit($id)
+    {
+        $u = new Usuarios();
+        $u->verificarLogin();
+
+        $dados = array();
+        $p = new Paginas();
+
+        if (isset($_POST['titulo']) && !empty($_POST['titulo'])) {
+            $titulo = addslashes($_POST['titulo']);
+            $url = addslashes($_POST['url']);
+            $corpo = addslashes($_POST['corpo']);
+
+            $p->update($titulo, $url, $corpo, $id);
+            header('Location: '.BASE.'painel');
+            exit;
+
+        }
+
+        $dados['pagina'] = $p->getPaginaById($id);
+        
+        $this->loadTemplateInPainel('painel/pagina_edit', $dados);
+    }
+
+    public function pagina_add()
+    {
+        $u = new Usuarios();
+        $u->verificarLogin();
+
+        $dados = array();
+        $p = new Paginas();
+
+        if (isset($_POST['titulo']) && !empty($_POST['titulo'])) {
+            $titulo = addslashes($_POST['titulo']);
+            $url = addslashes($_POST['url']);
+            $corpo = addslashes($_POST['corpo']);
+
+            $p->insert($titulo, $url, $corpo);
+            header('Location: '.BASE.'painel');
+            exit;
+
+        }
+
+        $this->loadTemplateInPainel('painel/pagina_add', $dados);
+    }
+
     public function login()
     {
         $dados = array(
