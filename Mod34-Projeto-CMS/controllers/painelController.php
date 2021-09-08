@@ -137,6 +137,14 @@ class painelController extends controller {
             $corpo = addslashes($_POST['corpo']);
 
             $p->insert($titulo, $url, $corpo);
+
+            if (isset($_POST['add_menu']) && !empty($_POST['add_menu'])) {
+                $m = new Menu();
+                $m->insert($titulo, $url);
+            }
+            // $_POST['add_menu']
+            
+
             header('Location: '.BASE.'painel');
             exit;
 

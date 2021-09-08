@@ -54,6 +54,8 @@ class Paginas extends model {
     public function insert($titulo, $url, $corpo)
     {
         $this->db->query("INSERT INTO paginas SET titulo = '$titulo', url = '$url', corpo = '$corpo'");
+
+        // return $this->db->lastInsertId();
     }
 
 }
